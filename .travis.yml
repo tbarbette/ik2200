@@ -1,3 +1,5 @@
 language: c
 script:
     - make
+    - test $(echo 5 | ./main 2) -eq 10
+
