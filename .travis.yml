@@ -1,5 +1,14 @@
 language: c
-script:
-    - make
-    - test $(echo 5 | ./main 2) -eq 10
 
+matrix:
+    - mult=2
+    - mult=4
+
+env:
+    - base=5
+
+before_script:
+    - make
+
+script:
+    - test $(echo $base | ./main $mult) -eq $(($base * $mult))
