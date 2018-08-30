@@ -1,14 +1,14 @@
 language: c
 
-matrix:
+env:
+  global:
+    - base=5
+  matrix:
     - mult=2
     - mult=4
-
-env:
-    - base=5
 
 before_script:
     - make
 
 script:
-    - test $(echo $base | ./main $mult) -eq $(($base * $mult))
+    - test $(echo $base | ./main $mult) -eq "$(($base * $mult))"
