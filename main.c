@@ -1,7 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, int argv) {
-    printf("Hello world !");
+int main(int argc, char* argv[]) {
 
     if (argc <= 1)
         return 1;
@@ -9,7 +9,8 @@ int main(int argc, int argv) {
     int n;
     scanf("%d", &n);
 
-    printf("%d", n * 2);
+    int mult = atoi(argv[1]);
+    printf("%d\n", n * mult);
 
     return 0;
 }
